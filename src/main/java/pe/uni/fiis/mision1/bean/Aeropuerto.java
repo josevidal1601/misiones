@@ -20,21 +20,55 @@ public class Aeropuerto {
     public static void main(String[] args) throws FileNotFoundException {
         Workbook wb = new HSSFWorkbook();
         Aeropuerto a= new Aeropuerto();
-        a.setEntrada("12:30 pm");
-        a.setSalida("3:20 pm");
+        a.setEntrada("12:30");
+        a.setSalida("21:20");
 
 
         try {
             FileOutputStream fileOut = new FileOutputStream("D:\\excel\\mision1.xls");
             Sheet hoja1 = wb.createSheet();
-            Row fila = hoja1.createRow(1);
-            org.apache.poi.ss.usermodel.Cell cell = fila.createCell(1);
-            cell.setCellValue("Horario de Entrada");
-            fila.createCell(2).setCellValue("Horario de Salida");
+            Row fila1 = hoja1.createRow(1);
+            org.apache.poi.ss.usermodel.Cell cell = fila1.createCell(2);
+            cell.setCellValue("Horarios");
 
-                Row fila1 = hoja1.createRow(2);
-                fila1.createCell(1).setCellValue(a.getEntrada());
-                fila1.createCell(2).setCellValue(a.getSalida());
+            Row fila2 = hoja1.createRow(2);
+            fila2.createCell(2).setCellValue("Salida");
+            fila2.createCell(3).setCellValue("Entrada");
+
+                Row fila3 = hoja1.createRow(3);
+                fila3.createCell(1).setCellValue("Vuelo1");
+                fila3.createCell(2).setCellValue(a.getEntrada());
+                fila3.createCell(3).setCellValue(a.getSalida());
+
+                Row fila4 = hoja1.createRow(4);
+                fila4.createCell(1).setCellValue("Vuelo2");
+                fila4.createCell(2).setCellValue("04:43");
+                fila4.createCell(3).setCellValue("12:41");
+
+                Row fila5 = hoja1.createRow(5);
+                fila5.createCell(1).setCellValue("Vuelo3");
+                fila5.createCell(2).setCellValue("06:47");
+                fila5.createCell(3).setCellValue("15:05");
+
+                Row fila6 = hoja1.createRow(6);
+                fila6.createCell(1).setCellValue("Vuelo4");
+                fila6.createCell(2).setCellValue("10:17");
+                fila6.createCell(3).setCellValue("22:29");
+
+                Row fila7 = hoja1.createRow(7);
+                fila7.createCell(1).setCellValue("Vuelo5");
+                fila7.createCell(2).setCellValue("16:30");
+                fila7.createCell(3).setCellValue("22:15");
+
+                Row fila8 = hoja1.createRow(8);
+                fila8.createCell(1).setCellValue("Vuelo6");
+                fila8.createCell(2).setCellValue("14:05");
+                fila8.createCell(3).setCellValue("22:29");
+
+                Row fila9 = hoja1.createRow(9);
+                fila9.createCell(1).setCellValue("Vuelo9");
+                fila9.createCell(2).setCellValue("08:55");
+                fila9.createCell(3).setCellValue("15:00");
 
             wb.write(fileOut);
             fileOut.close();
